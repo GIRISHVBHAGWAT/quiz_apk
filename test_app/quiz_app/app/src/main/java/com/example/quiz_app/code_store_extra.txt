@@ -1,0 +1,63 @@
+
+
+        tv.setTextSize(18);
+        tv.setTextColor(getResources().getColor(R.color.green));
+        tv.setText("ಓಂ ಕಾರಾಯ ನಮೋ ನಮಃ \n ರಸಪ್ರಶ್ನೆಗೆ ಸುಸ್ವಾಗತ ...\n ನಿಮ್ಮ ನೆಚ್ಚಿನ ವಿಭಾಗವನ್ನು ಆಯ್ಕೆ ಮಾಡಿರಿ..!!! \n ");
+
+        b5.setVisibility(View.GONE);
+        b6.setVisibility(View.GONE);
+
+//  quiz departmenting
+        b1.setText("ವ್ಯಾಕರಣ");
+        b2.setText("ಶಬ್ದ");
+        b3.setText("ತರ್ಕ");
+        b4.setText("ಕ್ರಿಯಾಪದ");
+
+//  string file opening from string.xml
+        String str = getResources().getString(R.string.vyakaranam);
+        String str2 = getResources().getString(R.string.noun);
+        String str3 = getResources().getString(R.string.tarkaha);
+        String str4 = getResources().getString(R.string.verb);
+
+
+
+
+
+////  changing direction of quiz partation
+//        b1.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                generate_quiz(rs,rs2,str);
+//                b5.setVisibility(View.VISIBLE);
+//                b6.setVisibility(View.VISIBLE);
+//            }
+//        });
+//        b2.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                generate_quiz(rs,rs2,str2);
+//                b5.setVisibility(View.VISIBLE);
+//                b6.setVisibility(View.VISIBLE);
+//                b1.setTextSize(25);
+//                b2.setTextSize(25);
+//                b3.setTextSize(25);
+//                b4.setTextSize(25);
+//            }
+//        });
+//        b3.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                generate_quiz(rs,rs2,str3);
+//                b5.setVisibility(View.VISIBLE);
+//                b6.setVisibility(View.VISIBLE);
+//            }
+//        });
+//
+//        b4.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                generate_quiz(rs,rs2,str4);
+//                b5.setVisibility(View.VISIBLE);
+//                b6.setVisibility(View.VISIBLE);
+//            }
+//        });

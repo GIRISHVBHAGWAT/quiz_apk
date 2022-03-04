@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".app_indexer">
+
+    <ScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <ImageButton
+                android:id="@+id/quiz"
+                android:layout_width="match_parent"
+                android:layout_height="250sp"
+                android:src="@drawable/quiz"
+                android:scaleType="fitXY"
+                android:layout_margin="20sp"/>
+
+            <ImageButton
+                android:id="@+id/sahitya_padya"
+                android:layout_width="match_parent"
+                android:layout_height="250sp"
+                android:src="@drawable/sah_padya"
+                android:scaleType="fitXY"
+                android:layout_margin="20sp"/>
+
+
+
+            <ImageButton
+                android:id="@+id/body"
+                android:layout_width="match_parent"
+                android:layout_height="250sp"
+                android:src="@drawable/body"
+                android:scaleType="fitXY"
+                android:layout_margin="20sp"/>
+
+            <ImageButton
+                android:id="@+id/tree"
+                android:layout_width="match_parent"
+                android:layout_height="250sp"
+                android:src="@drawable/tree"
+                android:scaleType="fitXY"
+                android:layout_margin="20sp"/>
+
+            <ImageButton
+                android:id="@+id/vyakaran"
+                android:layout_width="match_parent"
+                android:layout_height="250sp"
+                android:src="@drawable/vyakarana"
+                android:scaleType="fitXY"
+                android:layout_margin="20sp"/>
+
+            <ImageButton
+                android:id="@+id/works"
+                android:layout_width="match_parent"
+                android:layout_height="250sp"
+                android:src="@drawable/worker"
+                android:scaleType="fitXY"
+                android:layout_margin="20sp"/>
+
+            <ImageButton
+                android:id="@+id/animals"
+                android:layout_width="match_parent"
+                android:layout_height="250sp"
+                android:src="@drawable/harini"
+                android:scaleType="fitXY"
+                android:layout_margin="20sp"/>
+
+
+            <!--            <ImageButton-->
+<!--                android:id="@+id/text_play"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:src="@drawable/text_play"-->
+<!--                android:layout_margin="20sp"/>-->
+
+<!--            <ImageButton-->
+<!--                android:id="@+id/mantra_play"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:src="@drawable/record_play"-->
+<!--                android:layout_margin="20sp"/>-->
+
+
+<!--            <ImageButton-->
+<!--                android:id="@+id/key_value1"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:src="@drawable/key_value"-->
+<!--                android:layout_margin="20sp"/>-->
+
+        </LinearLayout>
+
+    </ScrollView>
+
+
+
+
+
+
+
+</androidx.appcompat.widget.LinearLayoutCompat>

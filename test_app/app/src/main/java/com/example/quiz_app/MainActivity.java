@@ -152,7 +152,7 @@ public class MainActivity extends AppCompatActivity {
         b5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(question_number<rs.size()){
+                if(question_number<rs.size()-1){
                     if(randm.isChecked()){
 
                         question_number=qus.nextInt(rs2.size());
@@ -160,9 +160,11 @@ public class MainActivity extends AppCompatActivity {
 
                     }
                     else {
+                        question_number++;
                         generate_quiz(rs, rs2, strs);
 
-                        question_number++;
+
+
                     }
 
                 }

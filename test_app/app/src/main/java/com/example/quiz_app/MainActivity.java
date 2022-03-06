@@ -132,7 +132,7 @@ public class MainActivity extends AppCompatActivity {
 // adding element to list
         rs.clear();
         rs2.clear();
-        for(int i=0; i<qs.length-2; i++){
+        for(int i=0; i<qs.length; i++){
             rs.add(qs[i].split("---")[0]);
             rs2.add(qs[i].split("---")[1]);
         }
@@ -152,7 +152,7 @@ public class MainActivity extends AppCompatActivity {
         b5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(question_number<rs.size()){
+                if(question_number<rs.size()-1){
                     if(randm.isChecked()){
 
                         question_number=qus.nextInt(rs2.size());

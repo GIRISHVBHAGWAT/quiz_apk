@@ -31,7 +31,14 @@ public class sahitya_2_indexer extends AppCompatActivity {
         String padya2 = getResources().getString(R.string.vikramoudaryam);
         String padya3 = getResources().getString(R.string.gograhanam);
         String samas = getResources().getString(R.string.samasa);
+        String samas2 = getResources().getString(R.string.samasa2);
+        String samas3 = getResources().getString(R.string.samasa3);
+        String samas4 = getResources().getString(R.string.samasa4);
+        String samas5 = getResources().getString(R.string.samasa5);
+        String samas6 = getResources().getString(R.string.samasa6);
         String paryay = getResources().getString(R.string.paryayapadam2);
+        String paryay2 = getResources().getString(R.string.paryayapadam3);
+        String paryay3 = getResources().getString(R.string.paryayapadam4);
 
         String vya1 = getResources().getString(R.string.abhyasa1);
         String vya2 = getResources().getString(R.string.abhyasa2);
@@ -48,7 +55,7 @@ public class sahitya_2_indexer extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(sahitya_2_indexer.this,MainActivity.class);
                 intent.putExtra("sahi_padya",getResources().getStringArray(R.array.sahity2_padya_gadya));
-                intent.putExtra("strings",new String[]{gadya1,gadya2,gadya3,gadya4,padya1,padya2,padya3,samas,paryay});
+                intent.putExtra("strings",new String[]{gadya1,gadya2,gadya3,gadya4,padya1,padya2,padya3,samas,samas2,samas3,samas4,samas5,samas6,paryay,paryay2,paryay3});
                 startActivity(intent);
             }
         });

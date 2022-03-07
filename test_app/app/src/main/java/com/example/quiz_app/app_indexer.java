@@ -59,7 +59,7 @@ public class app_indexer extends AppCompatActivity {
         String samasa=getResources().getString(R.string.samasa);
         String pryayapada = getResources().getString(R.string.paryayapadam2);
 
-        quiz.setOnClickListener(new View.OnClickListener() {
+        sahi_pad.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(app_indexer.this,MainActivity.class);
@@ -69,12 +69,10 @@ public class app_indexer extends AppCompatActivity {
             }
         });
 
-        sahi_pad.setOnClickListener(new View.OnClickListener() {
+        quiz.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(app_indexer.this,MainActivity.class);
-                intent.putExtra("sahi_padya",getResources().getStringArray(R.array.sahity2_padya_gadya));
-                intent.putExtra("strings",new String[]{padya1,padya2,padya3,padya4,gadya1,gadya2,gadya3,samasa,pryayapada});
+                Intent intent = new Intent(app_indexer.this,sahitya_2_indexer.class);
                 startActivity(intent);
             }
         });

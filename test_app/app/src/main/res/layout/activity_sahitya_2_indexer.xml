@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".app_indexer">
+    tools:context=".sahitya_2_indexer">
 
     <ScrollView
         android:layout_width="wrap_content"
@@ -19,7 +19,7 @@
                 android:id="@+id/quiz"
                 android:layout_width="match_parent"
                 android:layout_height="250sp"
-                android:src="@drawable/sourabha"
+                android:src="@drawable/gadya_pady"
                 android:scaleType="fitXY"
                 android:layout_margin="20sp"/>
 
@@ -27,7 +27,7 @@
                 android:id="@+id/sahitya_padya"
                 android:layout_width="match_parent"
                 android:layout_height="250sp"
-                android:src="@drawable/pattanam"
+                android:src="@drawable/champu"
                 android:scaleType="fitXY"
                 android:layout_margin="20sp"/>
 
@@ -37,7 +37,7 @@
                 android:id="@+id/body"
                 android:layout_width="match_parent"
                 android:layout_height="250sp"
-                android:src="@drawable/body"
+                android:src="@drawable/tarkaha123"
                 android:scaleType="fitXY"
                 android:layout_margin="20sp"/>
 
@@ -45,31 +45,7 @@
                 android:id="@+id/tree"
                 android:layout_width="match_parent"
                 android:layout_height="250sp"
-                android:src="@drawable/tree"
-                android:scaleType="fitXY"
-                android:layout_margin="20sp"/>
-
-            <ImageButton
-                android:id="@+id/vyakaran"
-                android:layout_width="match_parent"
-                android:layout_height="250sp"
-                android:src="@drawable/vyakarana"
-                android:scaleType="fitXY"
-                android:layout_margin="20sp"/>
-
-            <ImageButton
-                android:id="@+id/works"
-                android:layout_width="match_parent"
-                android:layout_height="250sp"
-                android:src="@drawable/worker"
-                android:scaleType="fitXY"
-                android:layout_margin="20sp"/>
-
-            <ImageButton
-                android:id="@+id/animals"
-                android:layout_width="match_parent"
-                android:layout_height="250sp"
-                android:src="@drawable/harini"
+                android:src="@drawable/vyakara"
                 android:scaleType="fitXY"
                 android:layout_margin="20sp"/>
 

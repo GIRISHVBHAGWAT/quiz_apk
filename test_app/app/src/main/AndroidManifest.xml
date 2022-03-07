@@ -12,9 +12,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Quiz_app">
+        <activity android:name=".sahitya_2_indexer"
+            android:exported="false"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".frag_nav"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".swich"
             android:exported="false"

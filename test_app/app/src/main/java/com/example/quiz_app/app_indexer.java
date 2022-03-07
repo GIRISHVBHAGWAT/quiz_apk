@@ -47,9 +47,8 @@ public class app_indexer extends AppCompatActivity {
         String str8 = getResources().getString(R.string.tarkaha);
         String str12 = getResources().getString(R.string.tarka2);
         String str9 = getResources().getString(R.string.vibhakti_prakaranam);
-        String str10 = getResources().getString(R.string.samasa);
+        String str10 = getResources().getString(R.string.samas);
         String str11 = getResources().getString(R.string.shivadha);
-        String str14=getResources().getString(R.string.padya_1mark);
         String padya1=getResources().getString(R.string.indra_sandesha);
         String padya2=getResources().getString(R.string.dushta_damanam);
         String padya3=getResources().getString(R.string.kalivimarshanam);
@@ -57,6 +56,8 @@ public class app_indexer extends AppCompatActivity {
         String gadya1 = getResources().getString(R.string.shishyatrayam);
         String gadya2 = getResources().getString(R.string.vikramoudaryam);
         String gadya3 = getResources().getString(R.string.gograhanam);
+        String samasa=getResources().getString(R.string.samasa);
+        String pryayapada = getResources().getString(R.string.paryayapadam2);
 
         quiz.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -73,7 +74,7 @@ public class app_indexer extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(app_indexer.this,MainActivity.class);
                 intent.putExtra("sahi_padya",getResources().getStringArray(R.array.sahity2_padya_gadya));
-                intent.putExtra("strings",new String[]{padya1,padya2,padya3,padya4,gadya1,gadya2,gadya3});
+                intent.putExtra("strings",new String[]{padya1,padya2,padya3,padya4,gadya1,gadya2,gadya3,samasa,pryayapada});
                 startActivity(intent);
             }
         });

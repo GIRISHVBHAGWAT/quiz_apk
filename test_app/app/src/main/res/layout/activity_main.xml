@@ -129,7 +129,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
         android:background="@color/yellow"
-        android:text="@string/bt3"
+        android:text="@string/butto3"
         android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@+id/b2"
         app:layout_constraintEnd_toEndOf="@+id/b1"

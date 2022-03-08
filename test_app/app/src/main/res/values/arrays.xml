@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="tarka_prame">
+        <item>न्यायमते पदार्थपरिचयः</item>
+        <item>मंगलवादः</item>
+        <item>ईश्वरवादः</item>
+        <item>शक्तिसाद्रश्ययोः अतिरिक्तत्वनिरासः</item>
+        <item>द्रव्यत्वजातिसाधनम्</item>
+        <item>तमसः द्रव्यत्वनिरासः</item>
+        <item>समवायसम्बन्धः</item>
+        <item>पाषाणे गन्धसाधनम्</item>
+        <item>सुवर्णस्य तैजसत्वसाधनम्</item>
+        <item>परमाणुस्वरूपविमर्शः</item>
+        <item>आत्मस्वरूपविमर्शः</item>
+        <item>त्रिविधकारणनिरूपणम्</item>
+        <item>साधर्म्य-वैधर्म्यनिरूपणम्</item>
+    </string-array>
+</resources>

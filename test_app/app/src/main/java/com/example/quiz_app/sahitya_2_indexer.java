@@ -47,6 +47,20 @@ public class sahitya_2_indexer extends AppCompatActivity {
         String vya5 = getResources().getString(R.string.abhyasa5);
         String vya6 = getResources().getString(R.string.abhyasa6);
 
+        String tarka_prame1 = getResources().getString(R.string.prameya1);
+        String tarka_prame2 = getResources().getString(R.string.prameya2);
+        String tarka_prame3 = getResources().getString(R.string.prameya3);
+        String tarka_prame4 = getResources().getString(R.string.prameya4);
+        String tarka_prame5 = getResources().getString(R.string.prameya5);
+        String tarka_prame6 = getResources().getString(R.string.prameya6);
+        String tarka_prame7 = getResources().getString(R.string.prameya7);
+        String tarka_prame8 = getResources().getString(R.string.prameya8);
+        String tarka_prame9 = getResources().getString(R.string.prameya9);
+        String tarka_prame10 = getResources().getString(R.string.prameya10);
+        String tarka_prame11 = getResources().getString(R.string.prameya11);
+        String tarka_prame12 = getResources().getString(R.string.prameya12);
+        String tarka_prame13 = getResources().getString(R.string.prameya13);
+
 
 
 
@@ -75,8 +89,8 @@ public class sahitya_2_indexer extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(sahitya_2_indexer.this,MainActivity.class);
-                intent.putExtra("sahi_padya",getResources().getStringArray(R.array.sahity2_padya_gadya));
-                intent.putExtra("strings",new String[]{gadya1,gadya2,gadya3,gadya4,padya1,padya2,padya3,samas,paryay});
+                intent.putExtra("sahi_padya",getResources().getStringArray(R.array.tarka_prame));
+                intent.putExtra("strings",new String[]{tarka_prame1,tarka_prame2,tarka_prame3,tarka_prame4,tarka_prame5,tarka_prame6,tarka_prame7,tarka_prame8,tarka_prame8,tarka_prame9,tarka_prame10,tarka_prame11,tarka_prame12,tarka_prame13});
                 startActivity(intent);
             }
         });

@@ -269,7 +269,7 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-    public int check_Answer(Button a, Button b, Button c, Button d, String ans, Button[] but, int index, ViewGroup quiz_layers, TextView result){
+    public void check_Answer(Button a, Button b, Button c, Button d, String ans, Button[] but, int index, ViewGroup quiz_layers, TextView result){
 
 
         if(a.getText().toString().equals(ans)){
@@ -299,7 +299,6 @@ public class MainActivity extends AppCompatActivity {
 
         }
 
-return 0;
     }
 
 }

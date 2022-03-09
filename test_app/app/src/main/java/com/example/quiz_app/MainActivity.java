@@ -233,7 +233,7 @@ public class MainActivity extends AppCompatActivity {
         b1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                check_Answer(b1,b2,b3,b4,rs2.get(question_number),buttons,indexa,quiz_layer,result);
+                check_Answer(b1,b2,b3,b4,rs2.get(question_number),buttons,indexa);
 //                b5.setVisibility(View.VISIBLE);
             }
         });
@@ -241,7 +241,7 @@ public class MainActivity extends AppCompatActivity {
         b2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                check_Answer(b2,b3,b4,b1, rs2.get(question_number),buttons,indexa,quiz_layer,result);
+                check_Answer(b2,b3,b4,b1, rs2.get(question_number),buttons,indexa);
 //                b5.setVisibility(View.VISIBLE);
             }
         });
@@ -249,7 +249,7 @@ public class MainActivity extends AppCompatActivity {
         b3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                check_Answer(b3,b2,b1,b4,rs2.get(question_number),buttons,indexa,quiz_layer,result);
+                check_Answer(b3,b2,b1,b4,rs2.get(question_number),buttons,indexa);
 //                b5.setVisibility(View.VISIBLE);
             }
         });
@@ -257,7 +257,7 @@ public class MainActivity extends AppCompatActivity {
         b4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                check_Answer(b4,b2,b3,b1,rs2.get(question_number),buttons,indexa,quiz_layer,result);
+                check_Answer(b4,b2,b3,b1,rs2.get(question_number),buttons,indexa);
 //                b5.setVisibility(View.VISIBLE);
             }
         });
@@ -269,7 +269,7 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-    public void check_Answer(Button a, Button b, Button c, Button d, String ans, Button[] but, int index, ViewGroup quiz_layers, TextView result){
+    public void check_Answer(Button a, Button b, Button c, Button d, String ans, Button[] but, int index){
 
 
         if(a.getText().toString().equals(ans)){

@@ -20,9 +20,10 @@ import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
     int ix=0;
+    int total_question=0;
     ViewGroup quiz_layer;
-    int traniner;
-    TextView tv,result;
+    int traniner=1;
+    TextView tv,result,tq;
     int question_number=0;
     Button b1,b2,b3,b4,b5;
     Button read,privi;
@@ -56,6 +57,7 @@ public class MainActivity extends AppCompatActivity {
         quiz_layer = findViewById(R.id.layer_color);
         spinner=findViewById(R.id.spin);
         randm=findViewById(R.id.change);
+        tq=findViewById(R.id.tq);
 
 // Making list for question And Answer
          rs = new ArrayList<String>();
@@ -80,7 +82,7 @@ public class MainActivity extends AppCompatActivity {
 
                 String [] name_of_string = (String[]) bd.get("strings");
                 generate_quiz(rs,rs2,name_of_string[i]);
-
+                total_question=name_of_string[i].length();
 
 
 
@@ -153,6 +155,9 @@ public class MainActivity extends AppCompatActivity {
         b5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                tq.setVisibility(View.VISIBLE);
+                tq.setText("3/"+String.valueOf(traniner));
+
                 traniner++;
                 if(question_number<rs.size()-1){
                     if(randm.isChecked()){
@@ -161,7 +166,7 @@ public class MainActivity extends AppCompatActivity {
                         generate_quiz(rs,rs2,strs);
 
                     }
-                    else if (traniner>3) {
+                    else if (traniner>2) {
                         question_number++;
                         traniner=0;
                         generate_quiz(rs, rs2, strs);
@@ -171,6 +176,8 @@ public class MainActivity extends AppCompatActivity {
                     }
                     else{
                         generate_quiz(rs, rs2, strs);
+                        result.setText(String.valueOf(rs.size())+"/"+String.valueOf(question_number));
+
                     }
 
                 }
@@ -179,7 +186,7 @@ public class MainActivity extends AppCompatActivity {
                 }
 //                b5.setVisibility(View.INVISIBLE);
                 quiz_layer.setBackgroundColor(getResources().getColor(R.color.white));
-                result.setText("");
+//                result.setText("");
 
             }
         });
@@ -189,17 +196,21 @@ public class MainActivity extends AppCompatActivity {
         privi.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                tq.setVisibility(View.GONE);
 
                 if(question_number>0){
                     generate_quiz(rs,rs2,strs);
+                    result.setText(String.valueOf(rs.size())+"/"+String.valueOf(question_number));
+                    question_number--;
+                }
 
-//                    question_number;
-                }else{
+
+                else{
                     question_number=rs.size()-1;
                 }
 //                b5.setVisibility(View.INVISIBLE);
                 quiz_layer.setBackgroundColor(getResources().getColor(R.color.white));
-                result.setText("");
+//                result.setText("");
 
             }
         });

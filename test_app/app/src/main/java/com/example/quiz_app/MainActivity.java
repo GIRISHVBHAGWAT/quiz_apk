@@ -21,6 +21,7 @@ import java.util.Random;
 public class MainActivity extends AppCompatActivity {
     int ix=0;
     ViewGroup quiz_layer;
+    int traniner;
     TextView tv,result;
     int question_number=0;
     Button b1,b2,b3,b4,b5;
@@ -152,6 +153,7 @@ public class MainActivity extends AppCompatActivity {
         b5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                traniner++;
                 if(question_number<rs.size()-1){
                     if(randm.isChecked()){
 
@@ -159,12 +161,16 @@ public class MainActivity extends AppCompatActivity {
                         generate_quiz(rs,rs2,strs);
 
                     }
-                    else {
+                    else if (traniner>3) {
                         question_number++;
+                        traniner=0;
                         generate_quiz(rs, rs2, strs);
 
 
 
+                    }
+                    else{
+                        generate_quiz(rs, rs2, strs);
                     }
 
                 }
@@ -187,8 +193,7 @@ public class MainActivity extends AppCompatActivity {
                 if(question_number>0){
                     generate_quiz(rs,rs2,strs);
 
-                    question_number--;
-
+//                    question_number;
                 }else{
                     question_number=rs.size()-1;
                 }

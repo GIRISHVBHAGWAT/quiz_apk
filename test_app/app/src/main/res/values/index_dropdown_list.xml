@@ -46,6 +46,12 @@
         <item>ಪರ್ಯಾಯಪದ2</item>
         <item>ಪರ್ಯಾಯಪದ3</item>
     </array>
+<array name="champu">
+    <item>चित्रदर्शनम्1</item>
+    <item>चित्रदर्शनम्2</item>
+    <item>दृष्टिवैषम्यम्1</item>
+    <item>दृष्टिवैषम्यम्2</item>
 
+</array>
 
 </resources>

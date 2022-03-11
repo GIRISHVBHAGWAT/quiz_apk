@@ -61,7 +61,10 @@ public class sahitya_2_indexer extends AppCompatActivity {
         String tarka_prame12 = getResources().getString(R.string.prameya12);
         String tarka_prame13 = getResources().getString(R.string.prameya13);
 
-
+        String champu_nataka1= getResources().getString(R.string.chitradarshanam1);
+        String champu_nataka2= getResources().getString(R.string.chitradarshanam2);
+        String champu_nataka3= getResources().getString(R.string.drushti_vaishamyam);
+        String champu_nataka4= getResources().getString(R.string.drushti_vaishamyam2);
 
 
         gadya.setOnClickListener(new View.OnClickListener() {
@@ -78,8 +81,8 @@ public class sahitya_2_indexer extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(sahitya_2_indexer.this,MainActivity.class);
-                intent.putExtra("sahi_padya",getResources().getStringArray(R.array.sahity2_padya_gadya));
-                intent.putExtra("strings",new String[]{gadya1,gadya2,gadya3,gadya4,padya1,padya2,padya3,samas,paryay});
+                intent.putExtra("sahi_padya",getResources().getStringArray(R.array.champu));
+                intent.putExtra("strings",new String[]{champu_nataka1,champu_nataka2,champu_nataka3,champu_nataka4});
                 startActivity(intent);
             }
         });

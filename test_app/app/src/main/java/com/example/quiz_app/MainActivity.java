@@ -22,7 +22,7 @@ public class MainActivity extends AppCompatActivity {
     int ix=0;
     int total_question=0;
     ViewGroup quiz_layer;
-    int traniner=1;
+    int traniner=0;
     TextView tv,result,tq;
     int question_number=0;
     Button b1,b2,b3,b4,b5;
@@ -156,7 +156,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 tq.setVisibility(View.VISIBLE);
-                tq.setText("3/"+String.valueOf(traniner));
+
 
                 traniner++;
                 if(question_number<rs.size()-1){
@@ -166,9 +166,9 @@ public class MainActivity extends AppCompatActivity {
                         generate_quiz(rs,rs2,strs);
 
                     }
-                    else if (traniner>2) {
+                    else if (traniner>3) {
                         question_number++;
-                        traniner=0;
+                        traniner=1;
                         generate_quiz(rs, rs2, strs);
 
 
@@ -184,6 +184,7 @@ public class MainActivity extends AppCompatActivity {
                 else{
                     question_number=0;
                 }
+                tq.setText("3/"+String.valueOf(traniner));
 //                b5.setVisibility(View.INVISIBLE);
                 quiz_layer.setBackgroundColor(getResources().getColor(R.color.white));
 //                result.setText("");

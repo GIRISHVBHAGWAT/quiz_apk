@@ -14,7 +14,7 @@ import java.io.IOError;
 import java.util.ArrayList;
 
 public class Read extends AppCompatActivity {
-
+    TextView textView2;
 //    It's created for reading a quiz topic...
 //    Iam getting a string from Main activity ..and making into to part questioin and answer
 //    question will be set to A List view  answer will display in TextView .
@@ -31,6 +31,8 @@ public class Read extends AppCompatActivity {
 
         TextView textView = findViewById(R.id.tv2);
         TextView textView2 = findViewById(R.id.tv3);
+        textView2.setVisibility(View.GONE);
+        textView.setVisibility(View.GONE);
 //  Information for quiz or requiz
         String hari = getIntent().getStringExtra("hari");
 
@@ -44,8 +46,8 @@ public class Read extends AppCompatActivity {
 
 //  Making saperete list for ques and ans
             for(String n : arrayis){
-                arrayList.add(n.split("---")[0]);
-                arrayList2.add(n.split("---")[1]);
+                arrayList.add(n.split("---")[0]+"\n"+n.split("---")[1]);
+//                arrayList2.add(n.split("---")[1]);
             }
 
 //  Setting ques to ListView Using Adapter
@@ -58,7 +60,7 @@ public class Read extends AppCompatActivity {
                 @Override
                 public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                     textView.setText(arrayList.get(i));
-                    textView2.setText(arrayList2.get(i));
+//                    textView2.setText(arrayList2.get(i));
                 }
             });
 
@@ -73,8 +75,8 @@ public class Read extends AppCompatActivity {
             ArrayList<String> arrayList = new ArrayList<>();
             ArrayList<String> arrayList2 = new ArrayList<>();
             for(String n : arrayis){
-                arrayList.add(n.split("---")[1]);
-                arrayList2.add(n.split("---")[0]);
+                arrayList.add(n.split("---")[1]+"\n"+n.split("---")[0]);
+//                arrayList2.add(n.split("---")[0]);
             }
             ArrayAdapter<String> adp = new ArrayAdapter<String>(Read.this, android.R.layout.simple_list_item_1,android.R.id.text1,arrayList);
             lv.setAdapter(adp);
@@ -83,7 +85,7 @@ public class Read extends AppCompatActivity {
                 @Override
                 public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                     textView.setText(arrayList.get(i));
-                    textView2.setText(arrayList2.get(i));
+//                    textView2.setText(arrayList2.get(i));
                 }
             });
 

@@ -22,6 +22,8 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:textSize="60sp"
+            android:layout_gravity="center"
+            android:textAlignment="center"
             android:fontFamily="cursive"
             android:text=" " />
 
@@ -33,6 +35,8 @@
             android:layout_weight="1"
             android:textSize="60sp"
             android:fontFamily="cursive"
+            android:textAlignment="center"
+            android:layout_gravity="center"
             android:text=" " />
 
     </LinearLayout>

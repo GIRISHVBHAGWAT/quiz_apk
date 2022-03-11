@@ -90,7 +90,7 @@ public class sahitya_2_indexer extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(sahitya_2_indexer.this,MainActivity.class);
                 intent.putExtra("sahi_padya",getResources().getStringArray(R.array.tarka_prame));
-                intent.putExtra("strings",new String[]{tarka_prame1,tarka_prame2,tarka_prame3,tarka_prame4,tarka_prame5,tarka_prame6,tarka_prame7,tarka_prame8,tarka_prame8,tarka_prame9,tarka_prame10,tarka_prame11,tarka_prame12,tarka_prame13});
+                intent.putExtra("strings",new String[]{tarka_prame1,tarka_prame2,tarka_prame3,tarka_prame4,tarka_prame5,tarka_prame6,tarka_prame7,tarka_prame8,tarka_prame9,tarka_prame10,tarka_prame11,tarka_prame12,tarka_prame13});
                 startActivity(intent);
             }
         });

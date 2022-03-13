@@ -30,6 +30,7 @@ public class MainActivity extends AppCompatActivity {
     ArrayList<String> rs,rs2;
     Spinner spinner;
     Switch randm;
+    ArrayList<Integer> re_li_item=new ArrayList<Integer>();
 
 
 
@@ -140,6 +141,7 @@ public class MainActivity extends AppCompatActivity {
             rs2.add(qs[i].split("---")[1]);
         }
 
+
         Random qus = new Random();
 
         randm.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
@@ -228,6 +230,9 @@ public class MainActivity extends AppCompatActivity {
         String ans2 = rs2.get(an2);
         String ans3 = rs2.get(an3);
         String ans4 = rs2.get(an4);
+
+        re_li_item.add(question_number);
+
 
 //  Mix option
         String[] opt = new String[]{ans1,ans2,ans3,ans4};

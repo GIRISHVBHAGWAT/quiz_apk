@@ -10,9 +10,12 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.CompoundButton;
+import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.Spinner;
 import android.widget.Switch;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -25,11 +28,13 @@ public class MainActivity extends AppCompatActivity {
     int traniner=0;
     TextView tv,result,tq;
     int question_number=0;
-    Button b1,b2,b3,b4,b5;
+    Button b1,b2,b3,b4,b5,check_ans;
     Button read,privi;
     ArrayList<String> rs,rs2;
     Spinner spinner;
-    Switch randm;
+    Switch randm,write_swich;
+    EditText w_ans;
+    LinearLayout textviews;
     ArrayList<Integer> re_li_item=new ArrayList<Integer>();
 
 
@@ -59,6 +64,13 @@ public class MainActivity extends AppCompatActivity {
         spinner=findViewById(R.id.spin);
         randm=findViewById(R.id.change);
         tq=findViewById(R.id.tq);
+        textviews = findViewById(R.id.linearLayout8);
+        w_ans=findViewById(R.id.writeanswer);
+        write_swich=findViewById(R.id.write_swich);
+        check_ans=findViewById(R.id.check_ans);
+
+        w_ans.setVisibility(View.GONE);
+        check_ans.setVisibility(View.GONE);
 
 // Making list for question And Answer
          rs = new ArrayList<String>();
@@ -153,13 +165,43 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+
+
+
+//  question
+        tv.setText(rs.get(question_number));
+
+
+        int an2 = qus.nextInt(rs2.size());
+        int an3 = qus.nextInt(rs2.size());
+        int an4 = qus.nextInt(rs2.size());
+
+        String ans1 = rs2.get(question_number);
+        String ans2 = rs2.get(an2);
+        String ans3 = rs2.get(an3);
+        String ans4 = rs2.get(an4);
+
+
+        write_swich.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                if(b){
+                    write_ans(ans1,rs,rs2);
+                }
+            }
+        });
+
+
         // next swich butttons implementation
         b5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 tq.setVisibility(View.VISIBLE);
 
-
+                if(write_swich.isChecked()){
+                    write_ans(ans1,rs,rs2);
+                }
+                else{
                 traniner++;
                 if(question_number<rs.size()-1){
                     if(randm.isChecked()){
@@ -192,46 +234,39 @@ public class MainActivity extends AppCompatActivity {
 //                result.setText("");
 
             }
+
+            }
         });
-
-
         // privi  buttton implementation
         privi.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 tq.setVisibility(View.GONE);
 
-                if(question_number>0){
-                    generate_quiz(rs,rs2,strs);
-                    result.setText(String.valueOf(rs.size())+"/"+String.valueOf(question_number));
-                    question_number--;
+                if(write_swich.isChecked()){
+                    write_ans(ans1,rs,rs2);
                 }
-
-
                 else{
-                    question_number=rs.size()-1;
-                }
+
+                    if(question_number>0){
+                        generate_quiz(rs,rs2,strs);
+                        result.setText(String.valueOf(rs.size())+"/"+String.valueOf(question_number));
+                        question_number--;
+                    }
+
+
+                    else{
+                        question_number=rs.size()-1;
+                    }
 //                b5.setVisibility(View.INVISIBLE);
-                quiz_layer.setBackgroundColor(getResources().getColor(R.color.white));
+                    quiz_layer.setBackgroundColor(getResources().getColor(R.color.white));
 //                result.setText("");
 
+                }
             }
         });
 
-//  question
-        tv.setText(rs.get(question_number));
 
-
-        int an2 = qus.nextInt(rs2.size());
-        int an3 = qus.nextInt(rs2.size());
-        int an4 = qus.nextInt(rs2.size());
-
-        String ans1 = rs2.get(question_number);
-        String ans2 = rs2.get(an2);
-        String ans3 = rs2.get(an3);
-        String ans4 = rs2.get(an4);
-
-        re_li_item.add(question_number);
 
 
 //  Mix option
@@ -320,6 +355,85 @@ public class MainActivity extends AppCompatActivity {
 
 
         }
+
+    }
+    public void write_ans(String answer,ArrayList<String> qus, ArrayList<String> ans){
+        View[] togone = new View[]{b1,b2,b3,b4,tq};
+        for(View v : togone) {
+            v.setVisibility(View.GONE);
+        }
+        w_ans.setVisibility(View.VISIBLE);
+        check_ans.setVisibility(View.VISIBLE);
+
+        b5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                int current_qustion_index = qus.indexOf(answer);
+                w_ans.setText("");
+                if(question_number<qus.size()-1){
+                    question_number++;
+                }
+                else{
+                    question_number=0;
+                }
+                tv.setText(qus.get(question_number));
+                result.setText(String.valueOf(rs.size())+"/"+String.valueOf(question_number));
+
+
+            }
+        });
+
+        privi.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                w_ans.setText("");
+                if(question_number>0){
+                    question_number--;
+                }
+                else{
+                    question_number=qus.size()-1;
+                }
+                tv.setText(qus.get(question_number));
+                result.setText(String.valueOf(rs.size())+"/"+String.valueOf(question_number));
+
+
+            }
+        });
+        check_ans.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String input_ans = w_ans.getText().toString();
+                if(input_ans.startsWith(ans.get(question_number).substring(0,1))){
+                    if(!input_ans.equals(ans.get(question_number))){
+                        w_ans.setText(ans.get(question_number));
+                    }
+                    else{
+
+                    result.setText("Currect");
+                    w_ans.setText("");
+                    if(question_number<qus.size()-1){
+                        question_number++;
+                    }
+                    else{
+                        question_number=0;
+                    }
+                    tv.setText(qus.get(question_number));
+                    result.setText(String.valueOf(rs.size())+"/"+String.valueOf(question_number));
+
+                }
+                }
+
+                else{
+                    Toast.makeText(MainActivity.this, "wrong Answer\n"+ans.get(question_number), Toast.LENGTH_SHORT).show();
+                }
+
+                if(input_ans.isEmpty()){
+                    Toast.makeText(MainActivity.this, "Write Answer\n"+ans.get(question_number), Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+
+
 
     }
 

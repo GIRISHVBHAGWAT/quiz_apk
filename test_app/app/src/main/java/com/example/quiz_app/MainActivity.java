@@ -437,7 +437,7 @@ public class MainActivity extends AppCompatActivity {
                 }
 
                 if(input_ans.isEmpty()){
-                    Toast.makeText(MainActivity.this, "Write Answer\n"+ans.get(question_number), Toast.LENGTH_SHORT).show();
+                    Toast.makeText(MainActivity.this, "Write Answers\n"+ans.get(question_number), Toast.LENGTH_SHORT).show();
                 }
             }
         });

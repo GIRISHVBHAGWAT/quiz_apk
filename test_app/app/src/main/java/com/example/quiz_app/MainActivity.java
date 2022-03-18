@@ -34,6 +34,7 @@ public class MainActivity extends AppCompatActivity {
     Spinner spinner;
     Switch randm,write_swich;
     EditText w_ans;
+    String strs;
     LinearLayout textviews;
     ArrayList<Integer> re_li_item=new ArrayList<Integer>();
 
@@ -96,6 +97,7 @@ public class MainActivity extends AppCompatActivity {
                 String [] name_of_string = (String[]) bd.get("strings");
                 generate_quiz(rs,rs2,name_of_string[i]);
                 total_question=name_of_string[i].length();
+                strs=name_of_string[i];
 
 
 
@@ -118,6 +120,8 @@ public class MainActivity extends AppCompatActivity {
 
 
         Button[] butto = new Button[] {b1,b2,b3,b4};
+        check_ans.setVisibility(View.GONE);
+        w_ans.setVisibility(View.GONE);
 
         for(Button x : butto){
             x.setVisibility(View.VISIBLE);
@@ -187,6 +191,10 @@ public class MainActivity extends AppCompatActivity {
             public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
                 if(b){
                     write_ans(ans1,rs,rs2);
+                }
+                else{
+                    generate_quiz(rs,rs2,strs);
+
                 }
             }
         });
@@ -402,6 +410,7 @@ public class MainActivity extends AppCompatActivity {
         check_ans.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
                 String input_ans = w_ans.getText().toString();
                 if(input_ans.startsWith(ans.get(question_number).substring(0,1))){
                     if(!input_ans.equals(ans.get(question_number))){

@@ -3,7 +3,9 @@ package com.example.quiz_app;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Activity;
+import android.content.ActivityNotFoundException;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -17,6 +19,7 @@ import android.widget.TextView;
 public class app_indexer extends AppCompatActivity {
 //    All_in_one_1.0
     int Color = 0;
+    Button myb;
     ImageButton quiz,text_play,Mantra_play,key_value1,sahi_pad,body,tree,vyakrana,worker,animals;
 
 
@@ -32,6 +35,7 @@ public class app_indexer extends AppCompatActivity {
         vyakrana=findViewById(R.id.vyakaran);
         worker=findViewById(R.id.works);
         animals=findViewById(R.id.animals);
+        myb=findViewById(R.id.myblog);
 //        text_play=findViewById(R.id.text_play);
 //        Mantra_play=findViewById(R.id.mantra_play);
 //        key_value1=findViewById(R.id.key_value1);
@@ -124,6 +128,26 @@ public class app_indexer extends AppCompatActivity {
                 intent.putExtra("sahi_padya",getResources().getStringArray(R.array.animals));
                 intent.putExtra("strings",new String[]{str4});
                 startActivity(intent);
+            }
+        });
+
+        myb.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+//                Intent intent = new Intent(app_indexer.this,blog_view.class);
+//                startActivity(intent);
+                String url = "https:\\sanskritabhyasi.blogspot.com";
+                Intent i = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
+                i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                i.setPackage("com.android.chrome");
+                try {
+                    startActivity(i);
+                } catch (ActivityNotFoundException e) {
+                    // Chrome is probably not installed
+                    // Try with the default browser
+                    i.setPackage(null);
+                    startActivity(i);
+                }
             }
         });
 
